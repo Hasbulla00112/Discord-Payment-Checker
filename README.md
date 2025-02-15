@@ -11,6 +11,11 @@ A high-performance asynchronous Discord token checker with payment method verifi
 - 🎨 **Colored Output**: Clear, color-coded console output for easy monitoring
 - 📁 **Organized Results**: Automatic result saving with timestamp-based folders
 
+## Showcase
+
+![image](https://github.com/user-attachments/assets/6f055f8d-5aa5-4bcb-b972-18077853ffc2)
+
+
 ## Installation
 
 1. Clone the repository
