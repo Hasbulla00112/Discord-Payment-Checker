@@ -56,7 +56,7 @@ class ResultManager:
         async with self.lock:
             async with aiofiles.open(self.hits_file, 'a', encoding='utf-8') as f:
                 await f.write(content)
-                await f.flush()  # Forțăm scrierea pe disc imediat
+                await f.flush()
 
 class TLSDiscordClient:
     def __init__(self):
@@ -169,7 +169,7 @@ async def process_single_token(token_data: Dict, proxy_manager: ProxyManager, re
 async def process_tokens(tokens: List[Dict], proxy_manager: ProxyManager, result_manager: ResultManager, semaphore: asyncio.Semaphore):
     tasks = []
     for i, token_data in enumerate(tokens):
-        thread_id = (i % semaphore._value) + 1  # Assign thread ID based on semaphore value
+        thread_id = (i % semaphore._value) + 1
         tasks.append(
             asyncio.create_task(
                 process_single_token(token_data, proxy_manager, result_manager, semaphore, thread_id)
